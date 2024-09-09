@@ -1,0 +1,64 @@
+{% extends "base_subcategory_thread.html" %}
+
+{% block js_file %}
+{% load static %}
+<script src="{% static 'app.js' %}" type="text/javascript"></script>
+<script id="check-update-data" type="application/json">{
+    "url": "{% url 'thread_get_update' thread_id=thread.id %}",
+    "thread_page_time": "{{thread.updated_date|date:'U'}}"
+}</script>
+<script id="edit-message-data" type="application/json">{
+    "url": "{% url 'thread_edit_message' thread_id=thread.id %}",
+    "csrf_token": "{{ csrf_token }}"
+}</script>
+{% endblock %}
+{% block title %}{{ thread.subcategory.name }} | {{ thread.subject }}{% endblock %}
+{% block subcategory_id %} {{ thread.subcategory.id }}  {% endblock %}
+{% block content_title %}{{ thread.subject }}{% endblock %}
+{% block form_action %}action="{% url 'thread_reply' root_id=thread.id %}"{% endblock %}
+{% block form_title %} Reply {% endblock %}
+{% block thread_reply%}
+<hr class="border border-2">
+{% include 'base_thread_reply.html' with replies=thread.root_replies thread_page=True %}
+<hr class="border border-2">
+{% endblock %}
+{% block updateinfo %}
+<div id="updateToast" class="toast position-fixed bottom-0 end-0 p-3 bg-primary" role="alert"
+     aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+    <a href="{{ request.path }}" class="text-decoration-none update-toast text-light">
+        <div class="d-flex">
+            <div class="toast-body">
+                <h6 class="fw-bold">The thread has been updated!</h6>
+                <span>Click here to refresh the page</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+        </div>
+    </a>
+</div>
+{% endblock %}
+{% block editmessage %}
+<div class="modal fade" id="editMessageModal" tabindex="-1" aria-labelledby="editMessageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: rgb(31, 68, 90);">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editMessageModalLabel">Edit message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="editMessageField" class="form-label">Message</label>
+                <textarea id="editMessageField" class="form-control" name="message" rows="4" cols="50"
+                          required></textarea>
+                <input type="hidden" id="editThreadIdField"/>
+                <p class="alert alert-danger text-center" id="editMessageError" hidden>Error while
+                    updating the message!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="editMessage('{{thread.id}}')">Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

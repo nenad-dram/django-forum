@@ -1,0 +1,593 @@
+[
+    {
+      "model": "forum.thread",
+      "pk": 1,
+      "fields": {
+        "subject" : "First Python Thread",
+        "author_name" : "John Doe",
+        "author_email" : "john.doe@mail.com",
+        "message" : "Hello Python World!",
+        "file" : "",
+        "created_date" : "2022-09-10 09:02:18.065719",
+        "updated_date" : "2022-09-13 12:25:47.236804",
+        "subcategory_id" : 16,
+        "reply_to_id" : null,
+        "root_thread_id" : null
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 2,
+      "fields": {
+        "subject" : "Django rocks",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "Django is awesome!",
+        "file" : "",
+        "created_date" : "2022-09-10 09:03:36.218483",
+        "updated_date" : "2022-11-13 14:46:06.981723",
+        "subcategory_id" : 16,
+        "reply_to_id" : null,
+        "root_thread_id" : null      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 3,
+      "fields": {
+        "subject" : "Django rocks",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "I agree!",
+        "file" : "",
+        "created_date" : "2022-09-10 16:24:58.014486",
+        "updated_date" : "2022-09-13 12:25:47.236804",
+        "subcategory_id" : 16,
+        "reply_to_id" : 2,
+        "root_thread_id" : 2
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 4,
+      "fields": {
+        "subject" : "First Python Thread",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "Welcome into the Python community!",
+        "file" : "",
+        "created_date" : "2022-09-10 18:53:16.011937",
+        "updated_date" : "2022-09-13 12:25:47.236804",
+        "subcategory_id" : 16,
+        "reply_to_id" : 1,
+        "root_thread_id" : 1
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 5,
+      "fields": {
+        "subject" : "First Python Thread",
+        "author_name" : "Bobily",
+        "author_email" : "",
+        "message" : "Hey Jon, nice to see you here!",
+        "file" : "",
+        "created_date" : "2022-09-10 18:54:38.400027",
+        "updated_date" : "2022-09-13 12:25:47.236804",
+        "subcategory_id" : 16,
+        "reply_to_id" : 1,
+        "root_thread_id" : 1
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 6,
+      "fields": {
+        "subject" : "First Python Thread",
+        "author_name" : "django_unchained",
+        "author_email" : "",
+        "message" : "Pythonist = Pythonist + 1",
+        "file" : "",
+        "created_date" : "2022-09-10 18:59:21.577035",
+        "updated_date" : "2022-09-13 12:25:47.236804",
+        "subcategory_id" : 16,
+        "reply_to_id" : 1,
+        "root_thread_id" : 1
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 7,
+      "fields": {
+        "subject" : "First Python Thread",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "Heh, nice one man!",
+        "file" : "",
+        "created_date" : "2022-09-11 16:37:03.131031",
+        "updated_date" : "2022-09-13 12:25:47.236804",
+        "subcategory_id" : 16,
+        "reply_to_id" : 6,
+        "root_thread_id" : 1
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 8,
+      "fields": {
+        "subject" : "Django rocks",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "Certainly it is!",
+        "file" : "",
+        "created_date" : "2022-09-13 13:11:55.336119",
+        "updated_date" : "2022-11-13 14:46:06.969887",
+        "subcategory_id" : 16,
+        "reply_to_id" : 2,
+        "root_thread_id" : 2
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 9,
+      "fields": {
+        "subject" : "Java test",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "Testing file upload",
+        "file" : "thread_files\/java.txt",
+        "created_date" : "2022-09-13 14:39:14.373305",
+        "updated_date" : "2022-09-13 14:39:14.373342",
+        "subcategory_id" : 14,
+        "reply_to_id" : null,
+        "root_thread_id" : null
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 10,
+      "fields": {
+        "subject" : "Image upload",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "Blue circle",
+        "file" : "thread_files\/scale.jpg",
+        "created_date" : "2022-09-13 16:23:49.949711",
+        "updated_date" : "2022-09-16 06:57:07.820660",
+        "subcategory_id" : 14,
+        "reply_to_id" : null,
+        "root_thread_id" : null
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 11,
+      "fields": {
+        "subject" : "Image upload",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "Blue circle with white background",
+        "file" : "",
+        "created_date" : "2022-09-16 06:54:00.899774",
+        "updated_date" : "2022-09-16 06:54:00.899820",
+        "subcategory_id" : 14,
+        "reply_to_id" : 10,
+        "root_thread_id" : 10
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 12,
+      "fields": {
+        "subject" : "Image upload",
+        "author_name" : "robert_brown",
+        "author_email" : "robert.brown@mail.com",
+        "message" : "Okay Anonymous...",
+        "file" : "",
+        "created_date" : "2022-09-16 06:57:07.811905",
+        "updated_date" : "2022-09-16 06:57:07.811932",
+        "subcategory_id" : 14,
+        "reply_to_id" : 11,
+        "root_thread_id" : 10
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 13,
+      "fields": {
+        "subject" : "The most used distro",
+        "author_name" : "op_tux",
+        "author_email" : "",
+        "message" : "What distro do you use, and why?",
+        "file" : "",
+        "created_date" : "2023-05-21 16:05:07.598737",
+        "updated_date" : "2023-05-21 16:33:00.860100",
+        "subcategory_id" : 19,
+        "reply_to_id" : null,
+        "root_thread_id" : null
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 14,
+      "fields": {
+        "subject" : "The most used distro",
+        "author_name" : "gnux",
+        "author_email" : "",
+        "message" : "Ubuntu for me...it's easy to use and cool",
+        "file" : "",
+        "created_date" : "2023-05-21 16:17:23.578281",
+        "updated_date" : "2023-05-21 16:17:23.578305",
+        "subcategory_id" : 19,
+        "reply_to_id" : 13,
+        "root_thread_id" : 13
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 15,
+      "fields": {
+        "subject" : "The most used distro",
+        "author_name" : "whoami",
+        "author_email" : "",
+        "message" : "Your name looks familiar?",
+        "file" : "",
+        "created_date" : "2023-05-21 16:18:04.841079",
+        "updated_date" : "2023-05-21 16:18:04.841100",
+        "subcategory_id" : 19,
+        "reply_to_id" : 13,
+        "root_thread_id" : 13
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 16,
+      "fields": {
+        "subject" : "The most used distro",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "Why file upload doesn't work?",
+        "file" : "",
+        "created_date" : "2023-05-21 16:20:44.165132",
+        "updated_date" : "2023-05-21 16:20:44.165183",
+        "subcategory_id" : 19,
+        "reply_to_id" : 13,
+        "root_thread_id" : 13
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 17,
+      "fields": {
+        "subject" : "The most used distro",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "I think the file upload is only possible when creating a new thread, but not when replying",
+        "file" : "",
+        "created_date" : "2023-05-21 16:24:14.036932",
+        "updated_date" : "2023-05-21 16:24:14.036987",
+        "subcategory_id" : 19,
+        "reply_to_id" : 16,
+        "root_thread_id" : 13
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 18,
+      "fields": {
+        "subject" : "The most used distro",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "If so then the filed should be disabled when replying...",
+        "file" : "",
+        "created_date" : "2023-05-21 16:26:14.706409",
+        "updated_date" : "2023-05-21 16:26:14.706429",
+        "subcategory_id" : 19,
+        "reply_to_id" : 17,
+        "root_thread_id" : 13
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 19,
+      "fields": {
+        "subject" : "The most used distro",
+        "author_name" : "prosecutor",
+        "author_email" : "",
+        "message" : "Please stick to the topic!\r\nI guess the admin will clear this thread.",
+        "file" : "",
+        "created_date" : "2023-05-21 16:30:41.242011",
+        "updated_date" : "2023-05-21 16:30:41.242033",
+        "subcategory_id" : 19,
+        "reply_to_id" : 13,
+        "root_thread_id" : 13
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 20,
+      "fields": {
+        "subject" : "The most used distro",
+        "author_name" : "isaac_kl",
+        "author_email" : "",
+        "message" : "Debian, a rock-solid distro. Old but gold!",
+        "file" : "",
+        "created_date" : "2023-05-21 16:34:00.856727",
+        "updated_date" : "2023-05-21 16:33:00.856750",
+        "subcategory_id" : 19,
+        "reply_to_id" : 14,
+        "root_thread_id" : 13
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 21,
+      "fields": {
+        "subject" : "Check pong-ping",
+        "author_name" : "Table",
+        "author_email" : "Tennis",
+        "message" : "Pong pong - ping ping",
+        "file" : "",
+        "created_date" : "2023-05-24 08:34:21.250116",
+        "updated_date" : "2023-05-24 09:38:47.613219",
+        "subcategory_id" : 5,
+        "reply_to_id" : null,
+        "root_thread_id" : null
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 22,
+      "fields": {
+        "subject" : "",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "pong pong",
+        "file" : "",
+        "created_date" : "2023-05-24 09:11:17.547416",
+        "updated_date" : "2023-05-24 09:11:17.547505",
+        "subcategory_id" : 5,
+        "reply_to_id" : 21,
+        "root_thread_id" : 21
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 25,
+      "fields": {
+        "subject" : "",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "Can I add a text file here?",
+        "file" : "",
+        "created_date" : "2023-05-24 09:38:46.610068",
+        "updated_date" : "2023-05-24 09:38:46.610098",
+        "subcategory_id" : 5,
+        "reply_to_id" : 21,
+        "root_thread_id" : 21
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 26,
+      "fields": {
+        "subject" : "Ping file",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "The file is attached",
+        "file" : "",
+        "created_date" : "2023-05-24 09:49:25.669754",
+        "updated_date" : "2023-05-25 13:32:08.841050",
+        "subcategory_id" : 5,
+        "reply_to_id" : null,
+        "root_thread_id" : null
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 27,
+      "fields": {
+        "subject" : "",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "dsadasdas",
+        "file" : "",
+        "created_date" : "2023-05-24 09:50:52.820407",
+        "updated_date" : "2023-05-24 09:50:52.820440",
+        "subcategory_id" : 5,
+        "reply_to_id" : 26,
+        "root_thread_id" : 26
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 28,
+      "fields": {
+        "subject" : "",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "nothing here",
+        "file" : "",
+        "created_date" : "2023-05-24 09:51:05.093499",
+        "updated_date" : "2023-05-24 11:04:04.823967",
+        "subcategory_id" : 5,
+        "reply_to_id" : 26,
+        "root_thread_id" : 26
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 29,
+      "fields": {
+        "subject" : "",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "asdqweqwedsa",
+        "file" : "",
+        "created_date" : "2023-05-24 09:51:17.609263",
+        "updated_date" : "2023-05-25 13:32:08.828113",
+        "subcategory_id" : 5,
+        "reply_to_id" : 26,
+        "root_thread_id" : 26
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 30,
+      "fields": {
+        "subject" : "Hey",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "File?",
+        "file" : "thread_files\/ping.txt",
+        "created_date" : "2023-05-24 09:56:56.676866",
+        "updated_date" : "2023-05-25 05:58:36.755958",
+        "subcategory_id" : 5,
+        "reply_to_id" : null,
+        "root_thread_id" : null
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 31,
+      "fields": {
+        "subject" : "",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "What is this?",
+        "file" : "",
+        "created_date" : "2023-05-24 10:02:29.532361",
+        "updated_date" : "2023-05-24 10:02:29.532395",
+        "subcategory_id" : 5,
+        "reply_to_id" : 29,
+        "root_thread_id" : 26
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 32,
+      "fields": {
+        "subject" : "",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "Abc",
+        "file" : "",
+        "created_date" : "2023-05-24 12:33:04.550004",
+        "updated_date" : "2023-05-24 12:33:04.550040",
+        "subcategory_id" : 5,
+        "reply_to_id" : 30,
+        "root_thread_id" : 30
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 33,
+      "fields": {
+        "subject" : "",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "Def :)",
+        "file" : "",
+        "created_date" : "2023-05-24 12:37:50.346080",
+        "updated_date" : "2023-05-24 12:37:50.346151",
+        "subcategory_id" : 5,
+        "reply_to_id" : 32,
+        "root_thread_id" : 30
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 34,
+      "fields": {
+        "subject" : "",
+        "author_name" : "gordon",
+        "author_email" : "gordon@free.com",
+        "message" : "'sup?",
+        "file" : "thread_files\/ping.txt",
+        "created_date" : "2023-05-24 13:09:06.121574",
+        "updated_date" : "2023-05-24 13:09:06.121707",
+        "subcategory_id" : 5,
+        "reply_to_id" : 30,
+        "root_thread_id" : 30
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 35,
+      "fields": {
+        "subject" : "",
+        "author_name" : "fruitarian",
+        "author_email" : "",
+        "message" : "An apple for you",
+        "file" : "",
+        "created_date" : "2023-05-25 05:50:37.645316",
+        "updated_date" : "2023-05-25 05:50:37.645369",
+        "subcategory_id" : 5,
+        "reply_to_id" : 30,
+        "root_thread_id" : 30
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 36,
+      "fields": {
+        "subject" : "",
+        "author_name" : "",
+        "author_email" : "",
+        "message" : "Where is your apple fruitarian?",
+        "file" : "thread_files\/apple.png",
+        "created_date" : "2023-05-25 05:58:36.752455",
+        "updated_date" : "2023-05-25 05:58:36.752510",
+        "subcategory_id" : 5,
+        "reply_to_id" : 35,
+        "root_thread_id" : 30
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 37,
+      "fields": {
+        "subject" : "Idle status",
+        "author_name" : "john_doe",
+        "author_email" : "john.doe@mail.com",
+        "message" : "… WDYT?",
+        "file" : "",
+        "created_date" : "2023-05-25 13:08:11.207443",
+        "updated_date" : "2023-05-25 13:19:16.433095",
+        "subcategory_id" : 36,
+        "reply_to_id" : null,
+        "root_thread_id" : null
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 38,
+      "fields": {
+        "subject" : "",
+        "author_name" : "john_doe",
+        "author_email" : "john.doe@mail.com",
+        "message" : "Idle is okay...",
+        "file" : "",
+        "created_date" : "2023-05-25 13:16:26.269532",
+        "updated_date" : "2023-05-25 13:16:26.269549",
+        "subcategory_id" : 36,
+        "reply_to_id" : 37,
+        "root_thread_id" : 37
+      }
+    },
+    {
+      "model": "forum.thread",
+      "pk": 39,
+      "fields": {
+        "subject" : "",
+        "author_name" : "jane_doe",
+        "author_email" : "jane.doe@mail.com",
+        "message" : "\"I'm just talking to myself\" :)",
+        "file" : "",
+        "created_date" : "2023-05-25 13:19:16.429924",
+        "updated_date" : "2023-05-25 13:19:16.429937",
+        "subcategory_id" : 36,
+        "reply_to_id" : 38,
+        "root_thread_id" : 37
+      }
+    }
+  ]

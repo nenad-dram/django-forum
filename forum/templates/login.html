@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+{% block header %}
+<div class="navbar-brand pb-2">
+    <a href="" onclick="window.history.back()">Back</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-2">
+        {% if form.non_field_errors %}
+        <div class="alert alert-danger text-center" role="alert">
+            {% for error in form.non_field_errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <h2 class="text-center pb-2">Login</h2>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username or e-mail</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary mt-2 w-100">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

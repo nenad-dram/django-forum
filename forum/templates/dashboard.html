@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block header %}
+<div class="col-2">
+    {% load static %}
+    <img src="{% static 'images/logo-128.png' %}">
+</div>
+<div class="col-6">
+    <h2>Forums board</h2>
+    <p>Some description...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.</p>
+</div>
+<div class="col text-end pe-5 navbar-brand">
+    {% if user.is_authenticated %}
+    <span>User: {{ user.username }}</span>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    <span class="ps-3 pe-3">|</span>
+    <a href="/admin">Admin</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-header list-group-item">"UPDATES"</li>
+            {% for thread in recent_updates %}
+            <li class="list-group-item"><a href="{% url 'thread_view' id=thread.id %}" class="text-decoration-none">
+                [{{thread.subcategory__name}}] |
+                {{thread.subject}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% for cat in categories %}
+    {% if cat.auth_required == False %}
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-header list-group-item">{{ cat.name }}</li>
+            {% for subcat in cat.subcategory_set.all %}
+            <li class="list-group-item"><a href="{% url 'subcategory' name=subcat.name|lower|urlencode %}"
+                                           class="text-decoration-none">
+                {{ subcat.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <div class="col">
+        {% for cat in categories %}
+        {% if cat.auth_required == True %}
+        <div class="col pb-5">
+            <ul class="list-group">
+                <li class="list-group-header-auth list-group-item">{{ cat.name }}</li>
+                {% for subcat in cat.subcategory_set.all %}
+                <li class="list-group-item"><a
+                        href="{% url 'subcategory' name=subcat.name|lower|urlencode %}"
+                        class="text-decoration-none">
+                    {{ subcat.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

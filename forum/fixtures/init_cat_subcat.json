@@ -1,0 +1,343 @@
+[
+  {
+    "model": "forum.category",
+    "pk": 1,
+    "fields": {
+      "name": "Hobbies"
+    }
+  },
+  {
+    "model": "forum.category",
+    "pk": 2,
+    "fields": {
+      "name": "Hi-Tech"
+    }
+  },
+  {
+    "model": "forum.category",
+    "pk": 3,
+    "fields": {
+      "name": "Talks"
+    }
+  },
+  {
+    "model": "forum.category",
+    "pk": 4,
+    "fields": {
+      "name": "Big Boss",
+      "auth_required": true
+    }
+  },
+  {
+    "model": "forum.category",
+    "pk": 5,
+    "fields": {
+      "name": "HR",
+      "auth_required": true
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Football"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Basketball"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 3,
+    "fields": {
+      "category": 1,
+      "name": "Volleyball"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 4,
+    "fields": {
+      "category": 1,
+      "name": "Table football"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 5,
+    "fields": {
+      "category": 1,
+      "name": "Ping-pong"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "name": "Cheese"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 7,
+    "fields": {
+      "category": 1,
+      "name": "Childer"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 8,
+    "fields": {
+      "category": 1,
+      "name": "Auto"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 9,
+    "fields": {
+      "category": 1,
+      "name": "Traveling"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 10,
+    "fields": {
+      "category": 1,
+      "name": "Handmade"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 11,
+    "fields": {
+      "category": 2,
+      "name": "Skills"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 12,
+    "fields": {
+      "category": 2,
+      "name": "Haskell"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 13,
+    "fields": {
+      "category": 2,
+      "name": ".NET"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 14,
+    "fields": {
+      "category": 2,
+      "name": "Java"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 15,
+    "fields": {
+      "category": 2,
+      "name": "PHP"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 16,
+    "fields": {
+      "category": 2,
+      "name": "Python"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 17,
+    "fields": {
+      "category": 2,
+      "name": "Ruby"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 18,
+    "fields": {
+      "category": 2,
+      "name": "C++"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 19,
+    "fields": {
+      "category": 2,
+      "name": "Linux"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 20,
+    "fields": {
+      "category": 2,
+      "name": "Mac"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 21,
+    "fields": {
+      "category": 2,
+      "name": "NoSQL"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 22,
+    "fields": {
+      "category": 2,
+      "name": "RMDB"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 23,
+    "fields": {
+      "category": 3,
+      "name": "Belgrade"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 24,
+    "fields": {
+      "category": 3,
+      "name": "Berlin"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 25,
+    "fields": {
+      "category": 3,
+      "name": "Rome"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 26,
+    "fields": {
+      "category": 3,
+      "name": "London"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 27,
+    "fields": {
+      "category": 3,
+      "name": "NY"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 28,
+    "fields": {
+      "category": 3,
+      "name": "Madrid"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 29,
+    "fields": {
+      "category": 3,
+      "name": "Paris"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 30,
+    "fields": {
+      "category": 3,
+      "name": "Politics"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 31,
+    "fields": {
+      "category": 3,
+      "name": "Trolls"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 32,
+    "fields": {
+      "category": 4,
+      "name": "Audit"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 33,
+    "fields": {
+      "category": 4,
+      "name": "Managers"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 34,
+    "fields": {
+      "category": 4,
+      "name": "Legal"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 35,
+    "fields": {
+      "category": 4,
+      "name": "Compensation"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 36,
+    "fields": {
+      "category": 5,
+      "name": "Idle"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 37,
+    "fields": {
+      "category": 5,
+      "name": "Stuffing"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 38,
+    "fields": {
+      "category": 5,
+      "name": "Equal opportunities"
+    }
+  }
+]

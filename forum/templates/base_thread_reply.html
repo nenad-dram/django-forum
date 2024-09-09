@@ -1,0 +1,100 @@
+<div class="row">
+    {% if thread.file %}
+    <div class="col-2">
+        {% if thread.is_file_image %}
+        <img src="/media/{{ thread.file }}" class="img-thumbnail">
+        {% else %}
+        <a href="/media/{{ thread.file }}">{{ thread.file_name }}</a>
+        {% endif %}
+    </div>
+    {% endif %}
+    <div class="col-10" id="{{thread.id}}">
+        <div class="col">
+            <div class="d-flex w-100">
+                <div class="col-4">
+                    {% if not thread_page %}
+                    <a href="{% url 'thread_view' id=thread.id %}" class="fw-bold fw-2 text-decoration-none">
+                        <h5>#{{ thread.id }} | {{ thread.subject }}</h5>
+                    </a>
+                    {% else %}
+                    <h5 class="fw-bold fw-2 text-decoration-none">#{{ thread.id }} | {{ thread.subject }}</h5>
+                    {% endif %}
+                </div>
+                <div class="col-3">
+                    <span>Created: {{ thread.created_date }}</span> <br>
+                    <span>Author: {{ thread.author_name|default:'Anonymous' }}</span>
+                </div>
+                <div class="col-2">
+                    {% if thread_page %}
+                    <button class="btn btn-info" onclick="setReplyTo({{reply.id}})">Reply</button>
+                    {% if user.is_authenticated and user.is_staff %}
+                    <button class="btn btn-info" onclick="showEditModal({{thread.id}})">
+                        Edit
+                    </button>
+                    {% endif %}
+                    {% else %}
+                    <a class="btn btn-info" href="{% url 'thread_view' id=thread.id %}">Reply</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <p id="message{{thread.id}}">{{ thread.message }}</p>
+        {% if thread.direct_replies %}
+        <ul class="list-group list-group-horizontal">
+            <li class="overflow-auto">Replies:</li>
+            {% for reply in thread.direct_replies %}
+            <li class="overflow-auto ms-1">
+                <a href="{% url 'thread_view' id=thread.id %}#{{reply.id}}">#{{reply.id}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <div class="row ps-4">
+        {% for reply in replies %}
+        <div class="row">
+            <div class="col-4 border rounded mt-3 p-3" id="{{reply.id}}">
+                <div class="row">
+                    {% if reply.file %}
+                    <div class="col-2">
+                        {% if reply.is_file_image %}
+                        <img src="/media/{{ reply.file }}" class="img-thumbnail">
+                        {% else %}
+                        <a href="/media/{{ reply.file }}">{{ reply.file_name }}</a>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    <div class="col">
+                        <span>#{{ reply.id }}</span>
+                        <span>Created: {{ reply.created_date }}</span>
+                        {% if thread_page %}
+                        {% if user.is_authenticated and user.is_staff %}
+                        <button class="btn btn-info float-end ms-1"
+                                onclick="showEditModal({{reply.id}})">Edit
+                        </button>
+                        {% endif %}
+                        <button class="btn btn-info float-end" onclick="setReplyTo({{reply.id}})">Reply</button>
+                        {% endif %}
+                        <br>
+                        <a class="fw-bold" href="{% url 'thread_view' id=thread.id %}#{{reply.reply_to_id}}">
+                            >>#{{ reply.reply_to_id }}</a><br>
+                        <span>Author: {{ reply.author_name|default:'Anonymous' }}</span>
+                        <p id="message{{reply.id}}" class="pt-3">{{ reply.message }}</p>
+                        {% if reply.direct_replies %}
+                        <ul class="list-group list-group-horizontal">
+                            <li class="overflow-auto">Replies:</li>
+                            {% for reply in reply.direct_replies %}
+                            <li class="overflow-auto ms-1">
+                                <a href="{% url 'thread_view' id=thread.id %}#{{reply.id}}">#{{reply.id}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

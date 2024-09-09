@@ -1,0 +1,95 @@
+[
+  {
+    "model": "forum.category",
+    "pk": 1,
+    "fields": {
+      "name": "Hobbies"
+    }
+  },
+  {
+    "model": "forum.category",
+    "pk": 2,
+    "fields": {
+      "name": "Hi-Tech"
+    }
+  },
+  {
+    "model": "forum.category",
+    "pk": 3,
+    "fields": {
+      "name": "Talks"
+    }
+  },
+  {
+    "model": "forum.category",
+    "pk": 4,
+    "fields": {
+      "name": "HR",
+      "auth_required": true
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Football"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Basketball"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 3,
+    "fields": {
+      "category": 2,
+      "name": "Skills"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "name": "Linux"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 5,
+    "fields": {
+      "category": 2,
+      "name": "c++"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 6,
+    "fields": {
+      "category": 3,
+      "name": "London"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 7,
+    "fields": {
+      "category": 3,
+      "name": "NY"
+    }
+  },
+  {
+    "model": "forum.subcategory",
+    "pk": 8,
+    "fields": {
+      "category": 4,
+      "name": "Stuffing"
+    }
+  }
+]

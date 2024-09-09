@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block header %}
+<div class="col">
+    {% for cat in categories %}
+    {% if cat.auth_required == False %}
+    <div class="row">
+        <ul class="list-group list-group-horizontal-md">
+            <li class="list-group-item list-group-horizontal-header">{{ cat.name }}:</li>
+            {% for subcat in cat.subcategory_set.all %}
+            <li class="list-group-item"><a href="{% url 'subcategory' name=subcat.name|lower|urlencode %}">
+                {{ subcat.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <div class="row">
+        {% for cat in categories %}
+        {% if cat.auth_required == True %}
+        <ul class="list-group list-group-horizontal col-4">
+            <li class="list-group-item list-group-horizontal-header">{{ cat.name }}:</li>
+            {% for subcat in cat.subcategory_set.all %}
+            <li class="list-group-item"><a
+                    href="{% url 'subcategory' name=subcat.name|lower|urlencode %}">
+                {{ subcat.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+<div class="col-2 text-end navbar-brand">
+    <a href="{% url 'home' %}">Dashboard</a>
+    <span>|</span>
+    {% if user.is_authenticated %}
+    <span>{{ user.username }}</span>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    <div class="col pt-3 pe-5">
+        {% load static %}
+        <img src="{% static 'images/logo-64.png' %}">
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+{% block updateinfo %}
+{% endblock %}
+<div class="row justify-content-center">
+    <div class="col-4 border border-2 rounded">
+        {% if form.non_field_errors %}
+        <div class="alert alert-danger text-center" role="alert">
+            {% for error in form.non_field_errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <form {% block form_action%} action="" {% endblock %} method="post"
+              enctype="multipart/form-data" class="">
+            {% csrf_token %}
+            <p class="fw-bold pt-1">{% block form_title%}{% endblock%}</p>
+            <div class="mb-3 col-6">
+                <label for="{{ form.subject.id_for_label }}" class="form-label">{{ form.subject.label_tag }}</label>
+                <input id="{{ form.subject.name }}" name="{{ form.subject.name }}" class="form-control"
+                       value="{{ form.subject.value|default_if_none:''}}" required
+                       {% if thread.id %} disabled {% endif %}>
+                <span class="text-danger">{{ form.subject.errors }}</span>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="{{ form.author_name.id_for_label }}" class="form-label">
+                    {{ form.author_name.label_tag }}
+                </label>
+                <input name="{{ form.author_name.name }}" class="form-control"
+                       value="{{ form.author_name.value|default_if_none:''}}"
+                       {% if user.is_authenticated %} disabled {% endif %}>
+                <span class="text-danger">{{ form.author_name.errors }}</span>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="{{ form.author_email.id_for_label }}" class="form-label">
+                    {{ form.author_email.label_tag }}
+                </label>
+                <input name="{{ form.author_email.name }}" class="form-control"
+                       value="{{ form.author_email.value|default_if_none:''}}"
+                       {% if user.is_authenticated %} disabled {% endif %}>
+                <span class="text-danger">{{ form.author_email.errors }}</span>
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.message.id_for_label }}" class="form-label">{{ form.message.label_tag }}</label>
+                <textarea class="form-control" rows="4" cols="50" name="{{ form.message.name }}"
+                          required>{{ form.message.value|default_if_none:''}}</textarea>
+                <span class="text-danger">{{ form.message.errors }}</span>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="{{ form.file.id_for_label }}" class="form-label">{{ form.file.label_tag }}</label>
+                <input type="file" name="{{ form.file.name }}" class="form-control">
+            </div>
+            <input type="hidden" name="{{ form.subcategory.name }}"
+                   value={% block subcategory_id%} {% endblock %}>
+            <input type="hidden" id="reply_to_id" name="{{ form.reply_to.name }}" value="{{ thread.id }}">
+            <div class="mb-3">
+                <input id="submit" type="submit" value="POST" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="pt-1 ps-1">
+        {% block thread_reply%}
+        {% endblock %}
+    </div>
+</div>
+{% block editmessage %}
+{% endblock %}
+{% endblock %}

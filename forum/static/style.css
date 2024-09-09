@@ -1,0 +1,54 @@
+section {
+    background-color: #1f445a;
+    color: white;
+    overflow: auto;
+    padding-top: 1%;
+    padding-left: 1%;
+}
+
+header {
+    background-color: #17374a;
+    overflow: hidden;
+    color: white;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+}
+
+.nav-link {
+    color: white;
+}
+
+.list-group-item {
+    background-color: #27404c;
+    overflow: auto;
+}
+
+.list-group-header {
+    background-color: #2494c9;
+    color: white;
+}
+
+.list-group-header-auth {
+    background-color: #176183;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: #2494c9;
+}
+
+.content-title {
+    background-color: #176183;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.list-group-horizontal-header {
+    font-weight: bold;
+    color: white;
+}

@@ -1,0 +1,19 @@
+{% extends "base_subcategory_thread.html" %}
+
+{% block title %}{{ subcategory.name }}{% endblock %}
+{% block content_title %}{{ subcategory.name }}{% endblock %}
+{% block form_action %}action="{% url 'thread_create' subcategory_name=subcategory.name|lower|urlencode %}"{% endblock %}
+{% block form_title %}New Thread{% endblock %}
+{% block subcategory_id %} {{ subcategory.id }}  {% endblock %}
+{% block thread_reply%}
+<hr class="border border-2">
+{% if threads %}
+{% for thread in threads %}
+{% include 'base_thread_reply.html' with replies=thread.recent_root_replies %}
+<hr class="border border-2">
+{% endfor %}
+{% else %}
+<p class="content-title text-center">No threads in this subcategory</p>
+<hr class="border border-2">
+{% endif %}
+{% endblock %}

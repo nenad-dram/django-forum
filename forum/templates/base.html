@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum | {% block title %}Title{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+
+    {% block js_file %}
+    {% endblock %}
+</head>
+<body>
+    <div class="container-fluid min-vh-100 d-flex flex-column">
+        <header id="header" class="row">
+            {% block header %}
+            {% endblock %}
+        </header>
+        <section id="section" class="row flex-grow-1">
+            {% block content %}
+            {% endblock %}
+        </section>
+    </div>
+</body>
+</html>
